@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Elements3D
+﻿namespace Elements3D
 {
     public class Point3D : Entity3D
-    { 
-        public float X { get; private set; }
-        public float Y { get; private set; }
-        public float Z { get; private set; }
+    {
+        public double X { get; private set; }
+        public double Y { get; private set; }
+        public double Z { get; private set; }
 
-        public Point3D(float x, float y, float z)
+        public Point3D(double x, double y, double z)
         {
             X = x;
             Y = y;
@@ -22,7 +15,6 @@ namespace Elements3D
 
         public Point3D()
         {
-
         }
 
         public void Add(Point3D point)
@@ -61,7 +53,7 @@ namespace Elements3D
         public override bool Equals(object obj)
         {
             Point3D item = obj as Point3D;
-            if(item == null)
+            if (item == null)
             {
                 return false;
             }
@@ -74,16 +66,8 @@ namespace Elements3D
         }
 
         public override int GetHashCode()
-        {//https://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
-            unchecked // Overflow is fine, just wrap
-            {
-                int hash = (int)2166136261;
-                // Suitable nullity checks etc, of course :)
-                hash = (hash * 16777619) ^ X.GetHashCode();
-                hash = (hash * 16777619) ^ Y.GetHashCode();
-                hash = (hash * 16777619) ^ Z.GetHashCode();
-                return hash;
-            }
+        {
+            return FNV_1a.CreateHash(X.GetHashCode(), Y.GetHashCode(), Z.GetHashCode());
         }
     }
 }

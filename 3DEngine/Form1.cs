@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using RenderEngine3D;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using RenderEngine3D;
 
 namespace _3DEngine
 {
     public partial class Form1 : Form
     {
-        Engine3D engine;
+        private Engine3D engine;
+
         public Form1()
         {
             engine = new Engine3D(new Size(0, 0));

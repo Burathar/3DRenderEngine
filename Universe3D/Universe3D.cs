@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Elements3D
 {
@@ -22,12 +18,12 @@ namespace Elements3D
             this.entities.AddRange(entities);
         }
 
-        public double GetVerticalAngle(decimal relativeHeight)
+        public double GetVerticalAngle(double relativeHeight)
         {
             return camera.GetVerticalAngle(relativeHeight);
         }
 
-        public double GetHorizontalAngle(decimal relativeWidth)
+        public double GetHorizontalAngle(double relativeWidth)
         {
             return camera.GetHorizontalAngle(relativeWidth);
         }

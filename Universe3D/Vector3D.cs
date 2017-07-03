@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Elements3D
 {
     public class Vector3D
     {
-        public float X { get; private set; }
-        public float Y { get; private set; }
-        public float Z { get; private set; }
+        public double X { get; private set; }
+        public double Y { get; private set; }
+        public double Z { get; private set; }
 
         public Vector3D()
         {
-
         }
 
         public Vector3D(Point3D pointA, Point3D pointB)
@@ -24,47 +19,47 @@ namespace Elements3D
             Z = pointB.Z - pointA.Z;
         }
 
-        public Vector3D(float angleX, float angleY, float angleZ, float length)
+        public Vector3D(double angleX, double angleY, double angleZ, double length)
         {
             //Uitrekenen met poolcoordinaten of sinus(gebruikt in Perlin noise app?
         }
 
-        public Vector3D(float x, float y, float z)
+        public Vector3D(double x, double y, double z)
         {
             this.X = x;
             this.Y = y;
             this.Z = z;
         }
 
-        public float GetAngleX
+        public double GetAngleX
         {
             get
             {
-                return 0;//Uitrekenen met poolcoordinaten of sinus(gebruikt in Perlin noise app?
+                return Math.Atan2(Math.Sqrt(Y * Y + Z * Z), X);
             }
         }
 
-        public float GetAngleY
+        public double GetAngleY
         {
             get
             {
-                return 0;//Uitrekenen met poolcoordinaten of sinus(gebruikt in Perlin noise app?
+                return Math.Atan2(Math.Sqrt(Z * Z + X * X), Y);
             }
         }
 
-        public float GetAngleZ
+        public double GetAngleZ
         {
             get
             {
-                return 0;//Uitrekenen met poolcoordinaten of sinus(gebruikt in Perlin noise app?
+                return Math.Atan2(Math.Sqrt(X * X + Y * Y), Z);
             }
         }
 
-        public float GetLength
+        public double GetLength
         {
             get
             {
-                return (float)Math.Sqrt(X * X + Y * Y + Z * Z);
+                return (double)Math.Sqrt(X * X + Y * Y + Z * Z);
             }
         }
 
@@ -101,6 +96,31 @@ namespace Elements3D
             X = -X;
             Y = -Y;
             Z = -Z;
+        }
+
+        public override string ToString()
+        {
+            return $"({X.ToString("N")}, {Y.ToString("N")}, {Z.ToString("N")})";
+        }
+
+        public override bool Equals(object obj)
+        {
+            Point3D item = obj as Point3D;
+            if (item == null)
+            {
+                return false;
+            }
+
+            bool areEqual = true;
+            if (!X.Equals(item.X)) areEqual = false;
+            if (!Y.Equals(item.Y)) areEqual = false;
+            if (!Z.Equals(item.Z)) areEqual = false;
+            return areEqual;
+        }
+
+        public override int GetHashCode()
+        {
+            return FNV_1a.CreateHash(X.GetHashCode(), Y.GetHashCode(), Z.GetHashCode());
         }
     }
 }

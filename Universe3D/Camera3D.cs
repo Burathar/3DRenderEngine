@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Elements3D
+﻿namespace Elements3D
 {
     public class Camera3D
     {
         public Point3D Position { get; set; }
         public Vector3D Direction { get; set; }
+
         /// <summary>
         /// The total angle that the camera can see.
         /// </summary>
-        public float LensAngle { get; set; } //moet nog berekening in komen met Focal length of the lens of the camera in mm.
+        public double LensAngle { get; set; } //moet nog berekening in komen met Focal length of the lens of the camera in mm.
+
         private Vector3D up;//Naam van een vector die loodrecht op vector x staat
+
         public Vector3D Up
         {//Naam van een vector die loodrecht op vector x staat
             get
@@ -28,14 +25,14 @@ namespace Elements3D
             }
         }
 
-        public double GetHorizontalAngle(decimal relativeWidth)
+        public double GetHorizontalAngle(double relativeWidth)
         {
-            throw new NotImplementedException();
+            return LensAngle * relativeWidth;
         }
 
-        public double GetVerticalAngle(decimal relativeHeight)
+        public double GetVerticalAngle(double relativeHeight)
         {
-            throw new NotImplementedException();
+            return LensAngle * relativeHeight;
         }
 
         public Camera3D()
