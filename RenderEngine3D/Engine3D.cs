@@ -34,11 +34,16 @@ namespace RenderEngine3D
                 for (int x = 0; x < canvasSize.Width - 1; x++)
                 {
                     double horizontalAngle = universe.GetHorizontalAngle((x + 1) / (double)canvasSize.Width);
-                    Color color = Color.Black;
-
-                    g.FillRectangle(new SolidBrush(color), x, y, 1, 1);
+                    DrawPixel(g, x, y, horizontalAngle, verticalAngle);
                 }
             }
+        }
+
+        private void DrawPixel(Graphics g, int x, int y, double horizontalAngle, double VerticalAngle)
+        {
+            Color color = Color.Black;
+            //color = universe.
+            g.FillRectangle(new SolidBrush(color), x, y, 1, 1);
         }
     }
 }

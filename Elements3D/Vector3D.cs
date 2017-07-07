@@ -4,6 +4,10 @@ namespace Elements3D
 {
     public class Vector3D
     {
+        public static Vector3D XAxis = new Vector3D(1, 0, 0);
+        public static Vector3D YAxis = new Vector3D(0, 1, 0);
+        public static Vector3D ZAxis = new Vector3D(0, 0, 1);
+
         public double X { get; private set; }
         public double Y { get; private set; }
         public double Z { get; private set; }
@@ -19,40 +23,11 @@ namespace Elements3D
             Z = pointB.Z - pointA.Z;
         }
 
-        public Vector3D(double angleX, double angleY, double angleZ, double length)
-        {
-            //Uitrekenen met poolcoordinaten of sinus(gebruikt in Perlin noise app?
-        }
-
         public Vector3D(double x, double y, double z)
         {
             this.X = x;
             this.Y = y;
             this.Z = z;
-        }
-
-        public double GetAngleX
-        {
-            get
-            {
-                return Math.Atan2(Math.Sqrt(Y * Y + Z * Z), X);
-            }
-        }
-
-        public double GetAngleY
-        {
-            get
-            {
-                return Math.Atan2(Math.Sqrt(Z * Z + X * X), Y);
-            }
-        }
-
-        public double GetAngleZ
-        {
-            get
-            {
-                return Math.Atan2(Math.Sqrt(X * X + Y * Y), Z);
-            }
         }
 
         public double GetLength
@@ -61,6 +36,16 @@ namespace Elements3D
             {
                 return (double)Math.Sqrt(X * X + Y * Y + Z * Z);
             }
+        }
+
+        public double GetDotProdcut(Vector3D vector)
+        {
+            return X * vector.X + Y * vector.Y + Z * vector.Z;
+        }
+
+        public double GetAngleWith(Vector3D vector)
+        { //Source: https://www.easycalculation.com/algebra/3dvector-angle.php
+            return (Math.Acos((Math.Abs(X * vector.X) + Math.Abs(Y * vector.Y) + Math.Abs(Z * vector.Z)) / (Math.Sqrt((X * X) + (Y * Y) + (Z * Z)) * Math.Sqrt((vector.Y * vector.Y) + (vector.X * vector.X) + (vector.Z * vector.Z)))) * 360) / (Math.PI * 2);
         }
 
         public void Add(Vector3D vector)
@@ -105,7 +90,7 @@ namespace Elements3D
 
         public override bool Equals(object obj)
         {
-            Point3D item = obj as Point3D;
+            Vector3D item = obj as Vector3D;
             if (item == null)
             {
                 return false;

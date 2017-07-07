@@ -7,8 +7,8 @@
     <ProjectGuid>{AD3955F0-266F-4E07-8832-276ED754D533}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Universe3D</RootNamespace>
-    <AssemblyName>Universe3D</AssemblyName>
+    <RootNamespace>Elements3D</RootNamespace>
+    <AssemblyName>Elements3D</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,12 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Elements3D\Camera3D.cs">
-      <Link>Camera3D.cs</Link>
-    </Compile>
+    <Compile Include="Camera3D.cs" />
     <Compile Include="CameraUpVectorException.cs" />
     <Compile Include="Entity3D.cs" />
     <Compile Include="FNV-1a.cs" />
+    <Compile Include="CameraLens.cs" />
     <Compile Include="Point3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Universe3D.cs" />

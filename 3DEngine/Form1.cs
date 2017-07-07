@@ -19,5 +19,9 @@ namespace _3DEngine
             engine.SetCanvasSize(picBoxCanvas.Size);
             engine.Draw(e.Graphics);
         }
+
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+        }
     }
 }

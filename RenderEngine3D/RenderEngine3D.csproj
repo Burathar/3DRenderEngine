@@ -45,7 +45,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Universe3D\Elements3D.csproj">
+    <ProjectReference Include="..\Elements3D\Elements3D.csproj">
       <Project>{ad3955f0-266f-4e07-8832-276ed754d533}</Project>
       <Name>Elements3D</Name>
     </ProjectReference>
