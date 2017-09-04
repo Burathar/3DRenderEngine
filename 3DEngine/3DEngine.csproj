@@ -79,9 +79,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RenderEngine3D\RenderEngine3D.csproj">
+    <ProjectReference Include="..\RenderEngine3D\RayTracer.csproj">
       <Project>{020a1772-3b1a-4064-a1a7-e41f7d13103c}</Project>
-      <Name>RenderEngine3D</Name>
+      <Name>RayTracer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

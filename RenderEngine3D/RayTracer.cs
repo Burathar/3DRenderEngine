@@ -1,14 +1,14 @@
 ﻿using Elements3D;
 using System.Drawing;
 
-namespace RenderEngine3D
+namespace RayTracer
 {
-    public class Engine3D
+    public class RayTracer
     {
         private Size canvasSize;
         private Universe3D universe;
 
-        public Engine3D(Size canvasSize)
+        public RayTracer(Size canvasSize)
         {
             this.canvasSize = canvasSize;
             Point3D cameraPosition = new Point3D(10, 5, -10);

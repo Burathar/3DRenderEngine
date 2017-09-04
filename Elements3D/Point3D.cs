@@ -2,19 +2,19 @@
 {
     public class Point3D : Entity3D
     {
-        public double X { get; private set; }
-        public double Y { get; private set; }
-        public double Z { get; private set; }
-
-        public Point3D(double x, double y, double z)
-        {
-            X = x;
-            Y = y;
-            Z = z;
-        }
+        public double X { get; protected set; }
+        public double Y { get; protected set; }
+        public double Z { get; protected set; }
 
         public Point3D()
         {
+        }
+
+        public Point3D(double x, double y, double z)
+        {
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
         }
 
         public void Add(Point3D point)

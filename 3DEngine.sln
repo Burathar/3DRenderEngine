@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DEngine", "3DEngine\3DEngine.csproj", "{1F08A80C-6D3E-4DF9-811A-40FE3CCC300F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenderEngine3D", "RenderEngine3D\RenderEngine3D.csproj", "{020A1772-3B1A-4064-A1A7-E41F7D13103C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RayTracer", "RenderEngine3D\RayTracer.csproj", "{020A1772-3B1A-4064-A1A7-E41F7D13103C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elements3DTests", "Elements3DTests\Elements3DTests.csproj", "{C0D406F5-2CFB-4885-BC22-342B80CFA028}"
 EndProject
